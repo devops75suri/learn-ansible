@@ -1,0 +1,29 @@
+- name: demo on printing
+  hosts: localhost
+  tasks:
+    - name: print hello world
+      ansible.builtin.debug:
+       msg: hello world
+
+#how to declare a variable
+- name: demo on vars
+  hosts: localhost
+  vars: #defineing the variable
+    URL: example.com
+  tasks:
+    - name: print a variable
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
+
+#Givven the variable in double quotes, ggod to give variable in double quotes , because it will fail some scenarios if codes are not provided.
+# in the key : value , if the value is variable or if value start with variable then it will fail'
+
+# declare variable in task level also
+- name: demo on task leval  vars
+  hosts: localhost
+  tasks:
+    - name: print a variable
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
+      vars: #defineing the variable task level
+        URL: example.com
