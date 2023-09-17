@@ -1,0 +1,12 @@
+- name: conditions
+  hosts: local hosts
+  tasks:
+    - name: print apple types
+      ansible.builtin.debug:
+        msg: apple price is 50rs
+      when: fruit == "apple"
+
+    - name: print banana  types
+      ansible.builtin.debug:
+        msg: banana price is 5rs
+      when: fruit == "banana"

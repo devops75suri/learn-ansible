@@ -31,16 +31,25 @@
 - name: Demo on task level vars
   hosts: localhost
   vars:
-    url: play.amazon.com #it is play level
+    url: play.amazon.com #it is task  level variable
   tasks:
     - name: print task variable
       ansible.builtin.debug:
         msg: "{{url}}"
       vars: # variable our define task level(you can define here it will only access)
         url: task.amazon.com
-    - name: print play variable
+    - name: print play variable #play level we don't have local variable
       ansible.builtin.debug:
         msg: "{{url}}"
+
+
+
+
+
+
+
+
+
 
 
 
