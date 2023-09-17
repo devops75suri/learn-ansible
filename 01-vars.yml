@@ -1,11 +1,9 @@
-- name: Demo
-  hosts: localhost
-  tasks:
-    - name: printing hello world in ansible
-      ansible.builtin.debug:
-        msg: hello world
-
-
+#- name: Demo
+#  hosts: localhost
+#  tasks:
+#    - name: printing hello world in ansible
+#      ansible.builtin.debug:
+#        msg: hello world
 
 
 - name: Demo on vars
