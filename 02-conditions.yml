@@ -1,5 +1,5 @@
 - name: conditions
-  hosts: local hosts
+  hosts: localhost
   tasks:
     - name: print apple types
       ansible.builtin.debug:
