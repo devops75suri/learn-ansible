@@ -33,11 +33,16 @@
   vars:
     url: play.amazon.com #it is play level
   tasks:
-    - name: print variable
+    - name: print task variable
       ansible.builtin.debug:
         msg: "{{url}}"
       vars: # variable our define task level(you can define here it will only access)
         url: task.amazon.com
+    - name: print play variable
+      ansible.builtin.debug:
+        msg: "{{url}}"
+      vars: # variable our define task level(you can define here it will only access)
+        url: play.amazon.com
 
 
 
