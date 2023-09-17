@@ -17,15 +17,27 @@
 
 #Givven the variable in double quotes, ggod to give variable in double quotes , because it will fail some scenarios if codes are not provided.
 # in the key : value , if the value is variable or if value start with variable then it will fail'
+#
+#- name: Demo on task level vars
+#  hosts: localhost
+#  tasks:
+#    - name: print variable
+#      ansible.builtin.debug:
+#        msg: "{{url}}"
+#      vars: # variable our define task level(you can define here it will only access)
+#          url: amazon.com
+
 
 - name: Demo on task level vars
   hosts: localhost
+  vars:
+    url: play.amazon.com #it is play level
   tasks:
     - name: print variable
       ansible.builtin.debug:
         msg: "{{url}}"
       vars: # variable our define task level(you can define here it will only access)
-          url: amazon.com
+        url: task.amazon.com
 
 
 
